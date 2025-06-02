@@ -2,6 +2,7 @@ import streamlit as st
 import DataLoader as dl
 import DataAnalyzer as da
 import matplotlib.pyplot as plt
+from flask import Flask, jsonify, request
 
 
 # Carregamento de dados

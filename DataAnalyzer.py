@@ -14,12 +14,15 @@ class DataAnalyzer:
    
 
     def gerar_dados_estatisticos(self, dados_filtrados):
+        
         estatisticas = {
             "Média de Abates": dados_filtrados["abates"].mean().round(2),
             "Média de Mortes": dados_filtrados["mortes"].mean().round(2),
             "Média de Assistências": dados_filtrados["assistencias"].mean().round(2),
             "Média de Ouro Total": dados_filtrados["ouro_total"].mean().round(2),
             "Média de Creeps Abatidos": dados_filtrados["total_creeps"].mean().round(2),
+            "Média de tempo de partida": f"{divmod(int(dados_filtrados['tempo_partida'].mean()), 60)[0]}:{divmod(int(dados_filtrados['tempo_partida'].mean()), 60)[1]:02d}",
+            "Desvio Padrão de Tempo de Partida": dados_filtrados["tempo_partida"].std().round(2),            
             "Desvio Padrão de Abates": dados_filtrados["abates"].std().round(2),
             "Desvio Padrão de Mortes": dados_filtrados["mortes"].std().round(2),
             "Desvio Padrão de Assistências": dados_filtrados["assistencias"].std().round(2),
