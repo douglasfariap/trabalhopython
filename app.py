@@ -5,6 +5,15 @@ import matplotlib.pyplot as plt
 from flask import Flask, jsonify, request
 
 
+
+app = Flask(__name__)
+
+
+
+@app.route('/dados', methods=['GET'])
+def get_items():
+    return jsonify(data),200
+
 # Carregamento de dados
 loader = dl.DataLoader("2022_LoL_esports_match_data_from_OraclesElixir.csv")
 
@@ -13,7 +22,7 @@ data = loader.carregar_dados()
 
 # Inicializa o analisador
 analyzer = da.DataAnalyzer(data)
-
+##statistics = analyzer.gerar_dados_estatisticos(df_filtrado_times)
 # Interface
 st.title("Análise dos sados das partidas competitivas LoL Esports 2022 ")
 st.sidebar.header("Filtros")
